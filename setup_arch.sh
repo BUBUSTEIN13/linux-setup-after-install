@@ -7,6 +7,12 @@ sudo pacman -Syu --noconfirm
 # Instalează build-essential
 sudo pacman -S --noconfirm base-devel
 
+
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si --noconfirm
+cd ..
+rm -rf yay
 # Instalează Sweet Theme și Candy Icons
 yay -S --noconfirm gtk-theme-sweet candy-icons
 
