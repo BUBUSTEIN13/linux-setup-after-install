@@ -50,6 +50,9 @@ paru -S --noconfirm discord spotify steam intellij-idea-community-edition virtua
 paru -S --noconfirm prismlauncher 
 
 sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
+
+sudo chmod a+wr /opt/spotify
+sudo chmod a+wr /opt/spotify/Apps -R
 # Instalează Spicetify
 curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh | sh
 
@@ -57,7 +60,7 @@ curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh | sh
 curl -fsSL https://raw.githubusercontent.com/spicetify/marketplace/main/resources/install.sh | sh
 
 echo "Comenzile au fost rulate cu succes!"
-# Reboot sistem în 20 de secunde
-echo "Sistemul se va reporni în 20 de secunde..."
-sleep 20
+# Reboot sistem în 10 de secunde
+echo "Sistemul se va reporni în 10 de secunde..."
+sleep 10
 sudo reboot
