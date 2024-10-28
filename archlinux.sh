@@ -27,12 +27,34 @@ sed -i '/^Color/a ILoveCandy' /etc/pacman.conf
 # Actualizare sistem
 pacman -Syyu --noconfirm
 
+# Instalare pachete sistem de bază
+pacman -S --noconfirm \
+    iwd \
+    openssh \
+    smartmontools \
+    xdg-utils \
+    wpa_supplicant \
+    wget \
+    curl \
+    egl-wayland
+
+# Activare servicii de sistem
+systemctl enable iwd
+systemctl enable sshd
+systemctl enable wpa_supplicant
+
 # Instalare KDE Plasma și pachete necesare
 echo "Instalare KDE Plasma..."
 pacman -S --noconfirm \
-    xorg plasma plasma-wayland-session \
-    kde-applications packagekit-qt5 \
-    sddm
+    xorg \
+    plasma-meta \
+    plasma-workspace \
+    plasma-wayland-session \
+    kde-applications \
+    packagekit-qt5 \
+    sddm \
+    ark \
+    kwrite
 
 # Activare servicii necesare
 systemctl enable sddm
